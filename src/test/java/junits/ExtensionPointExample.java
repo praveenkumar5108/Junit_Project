@@ -1,21 +1,23 @@
 package junits;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
-
-public class StringFunctionsTest {
+@ExtendWith(EnvCheck.class)
+public class ExtensionPointExample {
 	@Test
 	@DisplayName("PositiveTest")
 	public void test1() {
 		assertTrue(StringFunctions.isPlaindrome("oppo"));
 	}
-	@CustomAnnotation
+	@Test
+	@DisplayName("NegativeTest")
 	public void test2() {
 		assertFalse(StringFunctions.isPlaindrome("abcd"));
 	}
 	
-
 }
